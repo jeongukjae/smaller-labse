@@ -7,11 +7,13 @@ from official.nlp.modeling import networks
 
 def create_model():
     inputs = {
-        "input_mask": tf.keras.Input([None],dtype=tf.int32),
-        "input_type_ids": tf.keras.Input([None],dtype=tf.int32),
-        "input_word_ids": tf.keras.Input([None],dtype=tf.int32),
+        "input_mask": tf.keras.Input([None], dtype=tf.int32),
+        "input_type_ids": tf.keras.Input([None], dtype=tf.int32),
+        "input_word_ids": tf.keras.Input([None], dtype=tf.int32),
     }
-    bert_encoder = networks.BertEncoder.from_config(json.loads("""
+    bert_encoder = networks.BertEncoder.from_config(
+        json.loads(
+            """
     {
         "vocab_size": 501153,
         "hidden_size": 768,
@@ -29,13 +31,16 @@ def create_model():
         "dict_outputs": true,
         "return_all_encoder_outputs": false
     }
-    """))
+    """
+        )
+    )
     outputs = bert_encoder(inputs)
     model = tf.keras.Model(inputs, outputs)
     model.summary()
 
     model.load_weights("./downloads/labse-2")
     return model, bert_encoder
+
 
 english_sentences = tf.constant(["dog", "Puppies are nice.", "I enjoy taking long walks along the beach with my dog."])
 
@@ -45,5 +50,5 @@ model, bert_encoder = create_model()
 english_embeds1 = model(preprocessor(english_sentences))
 english_embeds2 = encoder(preprocessor(english_sentences))["default"]
 
-tf.debugging.assert_near(english_embeds1['pooled_output'], english_embeds2)
+tf.debugging.assert_near(english_embeds1["pooled_output"], english_embeds2)
 bert_encoder.save_weights("./models/labse")
