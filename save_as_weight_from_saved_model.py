@@ -5,7 +5,7 @@ import tensorflow_hub as hub
 from official.nlp.modeling import networks
 
 
-def create_model():
+def create_model(load_encoder_weight=False, load_model_weight=True):
     inputs = {
         "input_mask": tf.keras.Input([None], dtype=tf.int32),
         "input_type_ids": tf.keras.Input([None], dtype=tf.int32),
@@ -34,21 +34,25 @@ def create_model():
     """
         )
     )
+    if load_encoder_weight:
+        bert_encoder.load_weights("./models/labse")
     outputs = bert_encoder(inputs)
     model = tf.keras.Model(inputs, outputs)
     model.summary()
 
-    model.load_weights("./downloads/labse-2")
+    if load_model_weight:
+        model.load_weights("./downloads/labse-2")
     return model, bert_encoder
 
 
-english_sentences = tf.constant(["dog", "Puppies are nice.", "I enjoy taking long walks along the beach with my dog."])
+if __name__ == "__main__":
+    english_sentences = tf.constant(["dog", "Puppies are nice.", "I enjoy taking long walks along the beach with my dog."])
 
-preprocessor = hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder-cmlm/multilingual-preprocess/2")
-encoder = hub.KerasLayer("./downloads/labse-2")
-model, bert_encoder = create_model()
-english_embeds1 = model(preprocessor(english_sentences))
-english_embeds2 = encoder(preprocessor(english_sentences))["default"]
+    preprocessor = hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder-cmlm/multilingual-preprocess/2")
+    encoder = hub.KerasLayer("./downloads/labse-2")
+    model, bert_encoder = create_model()
+    english_embeds1 = model(preprocessor(english_sentences))
+    english_embeds2 = encoder(preprocessor(english_sentences))["default"]
 
-tf.debugging.assert_near(english_embeds1["pooled_output"], english_embeds2)
-bert_encoder.save_weights("./models/labse")
+    tf.debugging.assert_near(english_embeds1["pooled_output"], english_embeds2)
+    bert_encoder.save_weights("./models/labse")
