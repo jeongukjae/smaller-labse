@@ -4,6 +4,7 @@
 * <https://arxiv.org/abs/2007.01852>
 * <https://tfhub.dev/google/LaBSE/2>
 * <https://github.com/Geotrend-research/smaller-transformers>
+* <https://ai.googleblog.com/2020/08/language-agnostic-bert-sentence.html>
 
 ## Langs
 
@@ -22,9 +23,11 @@
 * `pt` Portuguese
 * `th` Thai
 * `tr` Turkish
-* `ru` Russia
+* `ru` Russian
 
-## Converting weight
+## Scripts
+
+### Convert weight
 
 ```sh
 mkdir -p downloads/labse-2
@@ -33,9 +36,15 @@ tar -xf downloads/labse-2.tar.gz -C downloads/labse-2/
 python save_as_weight_from_saved_model.py
 ```
 
-## Selecting vocabs
+### Select vocabs
 
 ```sh
 ./download_dataset.sh
 python select_vocab.py
+```
+
+### Make smaller LaBSE
+
+```sh
+./make_smaller_labse.py
 ```
