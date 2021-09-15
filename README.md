@@ -6,7 +6,7 @@ So I applied "Load What You Need: Smaller Multilingual Transformers" method to L
 
 ***If you need the PyTorch version, see <https://github.com/Geotrend-research/smaller-transformers>. I followed most of the steps in the paper.***
 
-| Model name                   | #param(transformer) | #param(word embedding) | #param(model) | vocab size |
+| Model                        | #param(transformer) | #param(word embedding) | #param(model) | vocab size |
 | ---------------------------- | ------------------: | ---------------------: | ------------: | ---------: |
 | LaBSE from tfhub (version 2) |               85.1M |                 384.9M |        470.9M |    501,153 |
 | Smaller LaBSE                |               85.1M |                 133.1M |        219.2M |    173,347 |
@@ -64,9 +64,9 @@ python evaluate_tatoeba.py --model HUB_STYLE_PATH --preprocess HUB_STYLE_PATH --
 
 ## Results
 
-### Tatoeba dataset
+### Tatoeba
 
-| Model Name                 |    fr |    es |    de |    zh |    ar |    it |    ja |    ko |    nl |    pl |    pt |    th |    tr |    ru |   avg |
+| Model                      |    fr |    es |    de |    zh |    ar |    it |    ja |    ko |    nl |    pl |    pt |    th |    tr |    ru |   avg |
 | -------------------------- | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
 | LaBSE from tf hub (en->xx) | 95.90 | 98.10 | 99.30 | 96.10 | 90.70 | 95.30 | 96.40 | 94.10 | 97.50 | 97.90 | 95.70 | 82.85 | 98.30 | 95.30 | 95.25 |
 | LaBSE from tf hub (xx->en) | 96.00 | 98.80 | 99.40 | 96.30 | 91.20 | 94.00 | 96.50 | 92.90 | 97.00 | 97.80 | 95.40 | 83.58 | 98.50 | 95.30 | 95.19 |
