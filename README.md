@@ -75,7 +75,8 @@ python evaluate_tatoeba.py --model HUB_STYLE_PATH --preprocess HUB_STYLE_PATH --
 | 15lang_LaBSE(en→xx) | 95.20 | 98.00 | 99.20 | 96.10 | 90.50 | 95.20 | 96.30 | 93.50 | 97.50 | 97.90 | 95.80 | 82.85 | 98.30 | 95.40 | 95.13 |
 | 15lang_LaBSE(xx→en) | 95.40 | 98.70 | 99.40 | 96.30 | 91.10 | 94.00 | 96.30 | 92.70 | 96.70 | 97.80 | 95.40 | 83.58 | 98.50 | 95.20 | 95.08 |
 
-*If the strategy to select vocabs is changed or the corpus used in the selection step is changed to the corpus similar to the evaluation dataset, it is expected to reduce the performance drop.*
+- *Accuracy(%) of the Tatoeba datasets.*
+- *If the strategy to select vocabs is changed or the corpus used in the selection step is changed to the corpus similar to the evaluation dataset, it is expected to reduce the performance drop.*
 
 ## References
 
