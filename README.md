@@ -61,7 +61,12 @@ python select_vocab.py
 
 ```sh
 ./download_tatoeba_dataset.sh
-python evaluate_tatoeba.py --model HUB_STYLE_PATH --preprocess HUB_STYLE_PATH --lang spa
+# evaluate TFHub LaBSE
+./evaluate_tatoeba.sh
+# evaluate the smaller LaBSE
+./evaluate_tatoeba.sh \
+    --model models/LaBSE_en-fr-es-de-zh-ar-zh_classical-it-ja-ko-nl-pl-pt-th-tr-ru/1/ \
+    --preprocess models/LaBSE_en-fr-es-de-zh-ar-zh_classical-it-ja-ko-nl-pl-pt-th-tr-ru_preprocess/1/
 ```
 
 ## Results
