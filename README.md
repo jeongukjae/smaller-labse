@@ -89,3 +89,4 @@ python select_vocab.py
 - Language-agnostic BERT Sentence Embedding: <https://arxiv.org/abs/2007.01852>
 - TFHub - LaBSE: <https://tfhub.dev/google/LaBSE/2>
 - LaBSE blog post: <https://ai.googleblog.com/2020/08/language-agnostic-bert-sentence.html>
+- Massively Multilingual Sentence Embeddings for Zero-Shot Cross-Lingual Transfer and Beyond: <https://arxiv.org/abs/1812.10464>
