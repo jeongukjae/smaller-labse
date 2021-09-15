@@ -1,29 +1,29 @@
 # smaller-labse
 
-* <https://arxiv.org/abs/2010.05609>
-* <https://arxiv.org/abs/2007.01852>
-* <https://tfhub.dev/google/LaBSE/2>
-* <https://github.com/Geotrend-research/smaller-transformers>
-* <https://ai.googleblog.com/2020/08/language-agnostic-bert-sentence.html>
+- <https://arxiv.org/abs/2010.05609>
+- <https://arxiv.org/abs/2007.01852>
+- <https://tfhub.dev/google/LaBSE/2>
+- <https://github.com/Geotrend-research/smaller-transformers>
+- <https://ai.googleblog.com/2020/08/language-agnostic-bert-sentence.html>
 
 ## Langs
 
-* `en` English
-* `fr` French
-* `es` Spanish
-* `de` German
-* `zh` Chinese-simplified
-* `ar` Arabic
-* `zh-classical` Chinese-traditional
-* `it` Italian
-* `ja` Japanese
-* `ko` Korean
-* `nl` Dutch
-* `pl` Polish
-* `pt` Portuguese
-* `th` Thai
-* `tr` Turkish
-* `ru` Russian
+- `en` English
+- `fr` French
+- `es` Spanish
+- `de` German
+- `zh` Chinese-simplified
+- `ar` Arabic
+- `zh-classical` Chinese-traditional
+- `it` Italian
+- `ja` Japanese
+- `ko` Korean
+- `nl` Dutch
+- `pl` Polish
+- `pt` Portuguese
+- `th` Thai
+- `tr` Turkish
+- `ru` Russian
 
 ## Scripts
 
