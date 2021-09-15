@@ -48,3 +48,10 @@ python select_vocab.py
 ```sh
 ./make_smaller_labse.py
 ```
+
+### Evaluate tatoeba
+
+```sh
+./download_tatoeba_dataset.sh
+python evaluate_tatoeba.py --model HUB_STYLE_PATH --preprocess HUB_STYLE_PATH --lang spa
+```
