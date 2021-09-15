@@ -6,10 +6,10 @@ So I applied "Load What You Need: Smaller Multilingual Transformers" method to L
 
 ***If you need the PyTorch version, see <https://github.com/Geotrend-research/smaller-transformers>. I followed most of the steps in the paper.***
 
-| Model                        | #param(transformer) | #param(word embedding) | #param(model) | vocab size |
-| ---------------------------- | ------------------: | ---------------------: | ------------: | ---------: |
-| LaBSE from tfhub (version 2) |               85.1M |                 384.9M |        470.9M |    501,153 |
-| Smaller LaBSE                |               85.1M |                 133.1M |        219.2M |    173,347 |
+| Model            | #param(transformer) | #param(word embedding) | #param(model) | vocab size |
+| ---------------- | ------------------: | ---------------------: | ------------: | ---------: |
+| tfhub LaBSE (v2) |               85.1M |                 384.9M |        470.9M |    501,153 |
+| Smaller LaBSE    |               85.1M |                 133.1M |        219.2M |    173,347 |
 
 ## Used Languages
 
@@ -28,6 +28,8 @@ So I applied "Load What You Need: Smaller Multilingual Transformers" method to L
 - Thai (`th` or `tha`)
 - Turkish (`tr` or `tur`)
 - Russian (`ru` or `rus`)
+
+I selected the languages multilingual-USE supports.
 
 ## Scripts
 
@@ -66,12 +68,12 @@ python evaluate_tatoeba.py --model HUB_STYLE_PATH --preprocess HUB_STYLE_PATH --
 
 ### Tatoeba
 
-| Model                      |    fr |    es |    de |    zh |    ar |    it |    ja |    ko |    nl |    pl |    pt |    th |    tr |    ru |   avg |
-| -------------------------- | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
-| LaBSE from tf hub (en->xx) | 95.90 | 98.10 | 99.30 | 96.10 | 90.70 | 95.30 | 96.40 | 94.10 | 97.50 | 97.90 | 95.70 | 82.85 | 98.30 | 95.30 | 95.25 |
-| LaBSE from tf hub (xx->en) | 96.00 | 98.80 | 99.40 | 96.30 | 91.20 | 94.00 | 96.50 | 92.90 | 97.00 | 97.80 | 95.40 | 83.58 | 98.50 | 95.30 | 95.19 |
-| LaBSE for 14 lang (en->xx) | 95.20 | 98.00 | 99.20 | 96.10 | 90.50 | 95.20 | 96.30 | 93.50 | 97.50 | 97.90 | 95.80 | 82.85 | 98.30 | 95.40 | 95.13 |
-| LaBSE for 14 lang (xx->en) | 95.40 | 98.70 | 99.40 | 96.30 | 91.10 | 94.00 | 96.30 | 92.70 | 96.70 | 97.80 | 95.40 | 83.58 | 98.50 | 95.20 | 95.08 |
+| Model               |    fr |    es |    de |    zh |    ar |    it |    ja |    ko |    nl |    pl |    pt |    th |    tr |    ru |   avg |
+| ------------------- | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
+| tfHub_LaBSE(en→xx)  | 95.90 | 98.10 | 99.30 | 96.10 | 90.70 | 95.30 | 96.40 | 94.10 | 97.50 | 97.90 | 95.70 | 82.85 | 98.30 | 95.30 | 95.25 |
+| tfHub_LaBSE(xx→en)  | 96.00 | 98.80 | 99.40 | 96.30 | 91.20 | 94.00 | 96.50 | 92.90 | 97.00 | 97.80 | 95.40 | 83.58 | 98.50 | 95.30 | 95.19 |
+| 15lang_LaBSE(en→xx) | 95.20 | 98.00 | 99.20 | 96.10 | 90.50 | 95.20 | 96.30 | 93.50 | 97.50 | 97.90 | 95.80 | 82.85 | 98.30 | 95.40 | 95.13 |
+| 15lang_LaBSE(xx→en) | 95.40 | 98.70 | 99.40 | 96.30 | 91.10 | 94.00 | 96.30 | 92.70 | 96.70 | 97.80 | 95.40 | 83.58 | 98.50 | 95.20 | 95.08 |
 
 *If the strategy to select vocabs is changed or the corpus used in the selection step is changed to the corpus similar to the evaluation dataset, it is expected to reduce the performance drop.*
 
