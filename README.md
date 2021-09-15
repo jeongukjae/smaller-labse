@@ -3,6 +3,7 @@
 * <https://arxiv.org/abs/2010.05609>
 * <https://arxiv.org/abs/2007.01852>
 * <https://tfhub.dev/google/LaBSE/2>
+* <https://github.com/Geotrend-research/smaller-transformers>
 
 ## Langs
 
