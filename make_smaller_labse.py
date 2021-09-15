@@ -56,6 +56,11 @@ def main(argv):
     original_repr = labse_model(preprocessor(sentences))["pooled_output"]
 
     # smaller LaBSE
+    smaller_labse_inputs = {
+        "input_mask": tf.keras.Input([None], dtype=tf.int32),
+        "input_type_ids": tf.keras.Input([None], dtype=tf.int32),
+        "input_word_ids": tf.keras.Input([None], dtype=tf.int32),
+    }
     smaller_labse_encoder: networks.BertEncoder = networks.BertEncoder.from_config(
         {
             "vocab_size": len(target_vocab),
@@ -86,8 +91,11 @@ def main(argv):
     for target, source in zip(smaller_labse_encoder.transformer_layers, labse_encoder.transformer_layers):
         target.set_weights(source.get_weights())
 
-    smaller_labse_encoder.save_weights(f"./models/LaBSE_{'-'.join(FLAGS.langs.split(','))}")
-    smaller_labse_encoder.save(f"./models/LaBSE_{'-'.join(FLAGS.langs.split(','))}/1")
+    smaller_labse_outputs = smaller_labse_encoder(smaller_labse_inputs)
+    smaller_labse_model = tf.keras.Model(smaller_labse_inputs, smaller_labse_outputs)
+    smaller_labse_model.summary()
+    smaller_labse_model.save_weights(f"./models/LaBSE_{'-'.join(FLAGS.langs.split(','))}")
+    smaller_labse_model.save(f"./models/LaBSE_{'-'.join(FLAGS.langs.split(','))}/1")
     smaller_preprocessor = hub.KerasLayer(preprocessing_path)
 
     new_repr = smaller_labse_encoder(smaller_preprocessor(sentences))["pooled_output"]
