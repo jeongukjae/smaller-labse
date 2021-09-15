@@ -1,11 +1,5 @@
 # smaller-labse
 
-- <https://arxiv.org/abs/2010.05609>
-- <https://arxiv.org/abs/2007.01852>
-- <https://tfhub.dev/google/LaBSE/2>
-- <https://github.com/Geotrend-research/smaller-transformers>
-- <https://ai.googleblog.com/2020/08/language-agnostic-bert-sentence.html>
-
 ## Langs
 
 - `en` English
@@ -55,3 +49,11 @@ python select_vocab.py
 ./download_tatoeba_dataset.sh
 python evaluate_tatoeba.py --model HUB_STYLE_PATH --preprocess HUB_STYLE_PATH --lang spa
 ```
+
+## References
+
+- <https://arxiv.org/abs/2010.05609>
+- <https://arxiv.org/abs/2007.01852>
+- <https://tfhub.dev/google/LaBSE/2>
+- <https://github.com/Geotrend-research/smaller-transformers>
+- <https://ai.googleblog.com/2020/08/language-agnostic-bert-sentence.html>
