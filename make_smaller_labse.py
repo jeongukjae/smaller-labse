@@ -29,13 +29,14 @@ def main(argv):
     tokens_for_langs.remove("[UNK]")
     target_vocab = kept_tokens + sorted(list(tokens_for_langs))
     print("# vocab:", len(target_vocab))
-    with open("./vocab.txt", "w") as f:
+    vocab_file_path = f"./models/vocab-{'-'.join(FLAGS.langs.split(','))}.txt"
+    with open(vocab_file_path, "w") as f:
         for token in target_vocab:
             print(token, file=f)
     preprocessing_path = f"./models/LaBSE_{'-'.join(FLAGS.langs.split(','))}_preprocess/1"
     export_tfhub_lib.export_preprocessing(
         export_path=preprocessing_path,
-        vocab_file="./vocab.txt",
+        vocab_file=vocab_file_path,
         do_lower_case=False,
         tokenize_with_offsets=False,
         default_seq_length=FLAGS.seq_len,
