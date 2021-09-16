@@ -6,10 +6,10 @@ The smaller version of LaBSE is evaluated for 14 languages using tatoeba dataset
 
 ***If you need the PyTorch version, see <https://github.com/Geotrend-research/smaller-transformers>. I followed most of the steps in the paper.***
 
-| Model            | #param(transformer) | #param(word embedding) | #param(model) | vocab size |
-| ---------------- | ------------------: | ---------------------: | ------------: | ---------: |
-| tfhub LaBSE (v2) |               85.1M |                 384.9M |        470.9M |    501,153 |
-| Smaller LaBSE    |               85.1M |                 133.1M |        219.2M |    173,347 |
+| Model        | #param(transformer) | #param(word embedding) | #param(model) | vocab size |
+| ------------ | ------------------: | ---------------------: | ------------: | ---------: |
+| tfhub_LaBSE  |               85.1M |                 384.9M |        470.9M |    501,153 |
+| 15lang_LaBSE |               85.1M |                 133.1M |        219.2M |    173,347 |
 
 ## Used Languages
 
