@@ -1,6 +1,6 @@
 # smaller-LaBSE
 
-LaBSE(Language-agnostic BERT Sentence Embedding) is a very good method to get sentence embeddings across languages. But it is hard to fine-tune due to the parameter size(~=471M) of this model. For instance, if I fine-tune this model with Adam optimizer, I need the GPU that has VRAM at least 7.5GB = 471M * (parameters 4 bytes + gradients 4 bytes + momentums 4 bytes + variances 4 bytes). So I applied "Load What You Need: Smaller Multilingual Transformers" method to LaBSE to reduce parameter size since most of this model's parameter is the word embedding table(~=385M).
+LaBSE(Language-agnostic BERT Sentence Embedding) is a very good method to get sentence embeddings across languages. But it is hard to fine-tune due to the parameter size(~=471M) of this model. For instance, if I fine-tune this model with Adam optimizer, I need the GPU that has VRAM at least 7.5GB = 471M * (parameters 4 bytes + gradients 4 bytes + momentums 4 bytes + variances 4 bytes). So I applied "Load What You Need: Smaller Multilingual Transformers" method to LaBSE to reduce parameter size since most of this model's parameter is the word embedding table(\~=385M).
 
 The smaller version of LaBSE is evaluated for 14 languages using tatoeba dataset. It shows we can reduce LaBSE's parameters to 47% without a big performance drop.
 
